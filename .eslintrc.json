@@ -18,6 +18,7 @@
 		"array-bracket-spacing": "off",
 		"comma-dangle": ["error", "never"],
 		"jsx-quotes": ["error", "prefer-single"],
+		"object-curly-spacing": "off",
 		"func-names": "off",
 		"linebreak-style": "off",
 		"no-alert": "off",

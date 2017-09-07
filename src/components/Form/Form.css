@@ -1,0 +1,20 @@
+.form {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.form__input {
+  border-radius: 0.2em;
+  font-size: 1.2rem;
+  padding: 0.4em;
+}
+
+.form__button {
+  background-color: #5cb85c;
+  border-radius: 0.2em;
+  color: white;
+  font-size: 1.2rem;
+  margin: 1em;
+  padding: 0.4em;
+}

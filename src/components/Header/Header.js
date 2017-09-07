@@ -1,18 +1,14 @@
-import React, { Component } from 'react';
+import React from 'react';
+import Form from '../Form/Form';
 import './Header.css';
 
-class Header extends Component {
-  render() {
-    return (
-      <div className='header-container'>
-        <h1 className='header__h1'>Weather App</h1>
-        <form className='header__form'>
-          <input className='header__input' type='text' placeholder='Rathmines, Dublin' />
-          <button className='header__button'>Get Weather</button>
-        </form>
-      </div>
-    );
-  }
+function Header() {
+  return (
+    <div className='header-container'>
+      <h1 className='header__h1'>Weather App</h1>
+      <Form flexDirection='row' />
+    </div>
+  );
 }
 
 export default Header;

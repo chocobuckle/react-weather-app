@@ -1,12 +1,23 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { string } from 'prop-types';
+import { Link } from 'react-router-dom';
+import { shape, string, bool, object } from 'prop-types';
 import './Form.css';
 
 class Form extends Component {
   static propTypes = {
-    flexDirection: string.isRequired
-  };
+    flexDirection: string.isRequired,
+    match: shape({
+      isExact: bool,
+      params: object,
+      path: string,
+      url: string
+    })
+  }
+
+  static defaultProps = {
+    match: {}
+  }
 
   state = {
     cityName: ''
@@ -33,6 +44,7 @@ class Form extends Component {
 
   render() {
     const { cityName } = this.state;
+    const { match } = this.props;
 
     return (
       <form className='form' style={{flexDirection: this.props.flexDirection}} onSubmit={e => this.handleOnSubmit(e)}>
@@ -43,7 +55,14 @@ class Form extends Component {
           type='text'
           placeholder='Dublin'
         />
-        <button type='submit' className='form__button'>Get Weather</button>
+        <Link
+          className='form__button'
+          to={cityName && {
+            pathname: `${match.url}forecast`,
+            search: `?city=${cityName}`
+          }}>
+          Get Weather
+        </Link>
       </form>
     );
   }

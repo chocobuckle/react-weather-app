@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { shape, string, bool, object } from 'prop-types';
 import './Form.css';
@@ -32,22 +31,12 @@ class Form extends Component {
     });
   }
 
-  handleOnSubmit = (e) => {
-    e.preventDefault();
-    const currentWeatherURL = `http://api.openweathermap.org/data/2.5/weather?q=${this.state.cityName}&type=accurate&APPID=eaf616267bbf2cc9d4b24b9f0d52bbb4`;
-    // const fiveDayForecastURL = `http://api.openweathermap.org/data/2.5/forecast?q=${this.state.cityName}&APPID=eaf616267bbf2cc9d4b24b9f0d52bbb4`;
-    axios.get(currentWeatherURL)
-      .then((currentWeather) => {
-        console.log(currentWeather.data);
-      });
-  }
-
   render() {
     const { cityName } = this.state;
     const { match } = this.props;
 
     return (
-      <form className='form' style={{flexDirection: this.props.flexDirection}} onSubmit={e => this.handleOnSubmit(e)}>
+      <form className='form' style={{flexDirection: this.props.flexDirection}}>
         <input
           onChange={e => this.handleOnChange(e)}
           value={cityName}

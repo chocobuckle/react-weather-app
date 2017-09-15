@@ -24,7 +24,9 @@ class Form extends Component {
   }
 
   handleOnChange = (e) => {
-    const { value } = e.target;
+    // This line caters for when the user is typing in the input, and also when they select
+    // a city name from the autocomplete drop-down menu.
+    const value = e.target ? e.target.value : e.formatted_address;
     this.setState(() => {
       return {
         cityName: value
@@ -39,10 +41,16 @@ class Form extends Component {
     return (
       <form className='form' style={{flexDirection: this.props.flexDirection}}>
         <Autocomplete
-          onChange={e => this.handleOnChange(e)}
+          onChange={(e) => {
+            this.handleOnChange(e);
+          }}
+          onPlaceSelected={(e) => {
+            this.handleOnChange(e);
+          }}
           className='form__input'
           placeholder='Dublin, Ireland'
           types={['(regions)']}
+          value={cityName}
         />
         <Link
           className='form__button'

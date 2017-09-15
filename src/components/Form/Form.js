@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Autocomplete from 'react-google-autocomplete';
 import { Link } from 'react-router-dom';
 import { shape, string, bool, object } from 'prop-types';
 import './Form.css';
@@ -37,12 +38,11 @@ class Form extends Component {
 
     return (
       <form className='form' style={{flexDirection: this.props.flexDirection}}>
-        <input
+        <Autocomplete
           onChange={e => this.handleOnChange(e)}
-          value={cityName}
           className='form__input'
-          type='text'
-          placeholder='Dublin'
+          placeholder='Dublin, Ireland'
+          types={['(regions)']}
         />
         <Link
           className='form__button'

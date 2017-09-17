@@ -1,0 +1,19 @@
+.day-item__icon-date-wrapper {
+  cursor: pointer;
+  margin: 1.65% 4%;
+  width: 16%;
+}
+
+.day-item__icon {
+  height: 100%;
+  width: 95%;
+}
+
+.day-item__date {
+  color: #808080;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen-Sans, Ubuntu, Cantarell, Helvetica Neue, sans-serif;
+  font-size: 1.8rem;
+  font-weight: 100;
+  margin-top: -0.25em;
+}
+

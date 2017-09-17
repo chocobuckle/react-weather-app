@@ -46,7 +46,7 @@ function formatDate(dateInMilliseconds) {
     throw new Error('Date is not valid.');
   }
 
-  return [day, month, date];
+  return `${day}, ${month} ${date}`;
 } // End of formatDate().
 
 export default formatDate;

@@ -47,7 +47,15 @@ class Forecast extends Component {
         <h1 className='forcast__h1'>{city}</h1>
         <div className='forcast__grid'>
           {
-            forcastArr.map(forcast => <DayItem forcast={forcast} />)
+            forcastArr.map((forcast) => {
+              return (
+                <DayItem
+                  forcast={forcast}
+                  key={forcast.dt}
+                  city={city}
+                />
+              );
+            })
           }
         </div>
       </div>

@@ -1,6 +1,7 @@
 .day-item__icon-date-wrapper {
   cursor: pointer;
   margin: 1.65% 4%;
+  text-decoration: none;
   width: 16%;
 }
 

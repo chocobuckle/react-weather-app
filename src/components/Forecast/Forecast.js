@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import queryString from 'query-string';
 import { string, shape } from 'prop-types';
 import axios from 'axios';
 import './Forecast.css';
 import Loading from '../Loading/Loading';
 import DayItem from '../DayItem/DayItem';
-
 
 class Forecast extends Component {
   static propTypes = {
@@ -23,7 +23,7 @@ class Forecast extends Component {
     // const currentWeatherURL = `http://api.openweathermap.org/data/2.5/weather?q=${city}&type=accurate&APPID=b714ec74bbab5650795063cb0fdf5fbe`;
     const sevenDayForecastURL = `http://api.openweathermap.org/data/2.5/forecast/daily?q=${city}&type=accurate&APPID=b714ec74bbab5650795063cb0fdf5fbe&cnt=7`;
     axios.get(sevenDayForecastURL)
-      .then((response) => {
+      .then(response => {
         const { city, list: forcastArr } = response.data;
         this.setState(() => {
           return {
@@ -47,13 +47,19 @@ class Forecast extends Component {
         <h1 className='forcast__h1'>{city}</h1>
         <div className='forcast__grid'>
           {
-            forcastArr.map((forcast) => {
+            forcastArr.map(forcast => {
               return (
-                <DayItem
-                  forcast={forcast}
+                <Link
+                  className='forcast__grid__link'
                   key={forcast.dt}
-                  city={city}
-                />
+                  to={{
+                    pathname: `/detail/${city}`,
+                    state: { forcast }
+                  }}>
+                    <DayItem
+                      forcast={forcast}
+                    />
+                </Link>
               );
             })
           }

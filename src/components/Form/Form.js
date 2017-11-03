@@ -27,10 +27,8 @@ class Form extends Component {
     // This line caters for when the user is typing in the input, and also when they select
     // a city name from the autocomplete drop-down menu.
     const value = e.target ? e.target.value : e.formatted_address;
-    this.setState(() => {
-      return {
-        cityName: value
-      };
+    this.setState({
+      cityName: value
     });
   }
 

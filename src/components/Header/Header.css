@@ -8,6 +8,7 @@
 }
 
 .header__h1 {
+  bottom: 0.07em;
   color: #fff;
   cursor: pointer;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen-Sans, Ubuntu, Cantarell, Helvetica Neue, sans-serif;
@@ -15,4 +16,5 @@
   font-weight: 100;
   margin: 0 0.25em;
   position: relative;
+  text-decoration: none;
 }

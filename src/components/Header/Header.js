@@ -1,16 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { shape, string, bool, object } from 'prop-types';
 import Form from '../Form/Form';
 import './Header.css';
-
-function Header({ match }) {
-  return (
-    <div className='header-container'>
-      <h1 className='header__h1'>Weather App</h1>
-      <Form flexDirection='row' match={match} />
-    </div>
-  );
-}
 
 Header.propTypes = {
   match: shape({
@@ -24,5 +16,14 @@ Header.propTypes = {
 Header.defaultProps = {
   match: {}
 };
+
+function Header({ match }) {
+  return (
+    <div className='header-container'>
+      <Link to='/' className='header__h1'>Weather App</Link>
+      <Form flexDirection='row' match={match} />
+    </div>
+  );
+}
 
 export default Header;

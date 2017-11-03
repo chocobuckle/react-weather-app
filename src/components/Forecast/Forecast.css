@@ -1,19 +1,21 @@
-.forcast-container {
-  margin: 0 auto;
-  width: 85%;
-}
-
 .forcast__h1 {
-  color: #000;
+  color: #808080;;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen-Sans, Ubuntu, Cantarell, Helvetica Neue, sans-serif;
   font-size: 4rem;
   font-weight: 100;
-  margin: 0.5em auto -0.25em;
+  margin: 0 0 0.2em;
 }
 
 .forcast__grid {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin-top: -1.75em;
+}
+
+.forcast__grid__link {
+  align-items: space-between;
+  display: flex;
+  justify-content: center;
+  margin: 0 2.25%;
+  text-decoration: none;
 }

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Autocomplete from 'react-google-autocomplete';
-import { Link } from 'react-router-dom';
 import { string } from 'prop-types';
 import './Form.css';
 
@@ -13,7 +12,7 @@ class Form extends Component {
     cityName: ''
   }
 
-  handleOnChange = (e) => {
+  handleOnChange = e => {
     // This line caters for when the user is typing in the input, and also when they select
     // a city name from the autocomplete drop-down menu.
     const value = e.target ? e.target.value : e.formatted_address;
@@ -22,12 +21,26 @@ class Form extends Component {
     });
   }
 
-  render() {
+  handleSubmit = e => {
+    e.preventDefault();
     const { cityName } = this.state;
     const { match } = this.props;
+    if (cityName) {
+      this.props.history.push({
+        pathname: `${match.url}forecast`,
+        search: `?city=${cityName}`
+      })
+    }
+    this.setState({
+      cityName: ''
+    })
+  }
+
+  render() {
+    const { cityName } = this.state;
 
     return (
-      <form className='form' style={{flexDirection: this.props.flexDirection}}>
+      <form className='form' onSubmit={this.handleSubmit} style={{flexDirection: this.props.flexDirection}}>
         <Autocomplete
           onChange={(e) => {
             this.handleOnChange(e);
@@ -40,14 +53,7 @@ class Form extends Component {
           types={['(regions)']}
           value={cityName}
         />
-        <Link
-          className='form__button'
-          to={cityName && {
-            pathname: `${match.url}forecast`,
-            search: `?city=${cityName}`
-          }}>
-          Get Weather
-        </Link>
+        <button className='form__button' type='submit'>Get Weather</button>
       </form>
     );
   }

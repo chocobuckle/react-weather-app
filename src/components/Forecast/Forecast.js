@@ -21,8 +21,7 @@ class Forecast extends Component {
 
   componentDidMount() {
     const { city } = queryString.parse(this.props.location.search);
-    // const currentWeatherURL = `http://api.openweathermap.org/data/2.5/weather?q=${city}&type=accurate&APPID=b714ec74bbab5650795063cb0fdf5fbe`;
-    const sevenDayForecastURL = `http://api.openweathermap.org/data/2.5/forecast/daily?q=${city}&type=accurate&APPID=b714ec74bbab5650795063cb0fdf5fbe&cnt=7`;
+    const sevenDayForecastURL = `https://api.openweathermap.org/data/2.5/forecast/daily?q=${city}&type=accurate&units=metric&APPID=b714ec74bbab5650795063cb0fdf5fbe&cnt=7`;
     axios.get(sevenDayForecastURL)
       .then(response => {
         const { city, list: forecastArr } = response.data;

@@ -17,11 +17,11 @@ Header.defaultProps = {
   match: {}
 };
 
-function Header({ match }) {
+function Header(props) {
   return (
     <div className='header-container'>
       <Link to='/' className='header__h1'>Weather App</Link>
-      <Form flexDirection='row' match={match} />
+      <Form flexDirection='row' {...props} />
     </div>
   );
 }

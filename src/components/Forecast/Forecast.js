@@ -15,6 +15,7 @@ class Forecast extends Component {
   }
 
   state = {
+    error: false,
     loading: true
   }
 
@@ -24,45 +25,56 @@ class Forecast extends Component {
     const sevenDayForecastURL = `http://api.openweathermap.org/data/2.5/forecast/daily?q=${city}&type=accurate&APPID=b714ec74bbab5650795063cb0fdf5fbe&cnt=7`;
     axios.get(sevenDayForecastURL)
       .then(response => {
-        const { city, list: forcastArr } = response.data;
-        this.setState(() => {
-          return {
-            loading: false,
-            city: city.name,
-            forcastArr
-          };
+        const { city, list: forecastArr } = response.data;
+        this.setState({
+          error: false,
+          loading: false,
+          city: city.name,
+          forecastArr
+        });
+      })
+      .catch(error => {
+        console.warn(error);
+        this.setState({
+          error: true,
+          loading: false,
         });
       });
   }
 
   render() {
+    if (this.state.error === true) {
+      return (
+        <div className='forecast__error'>
+          <h2>No data available for that city.</h2>
+          <h2>Please <Link to='/' className='forecast__error__link'>choose another city.</Link></h2>
+        </div>
+      )
+    }
+
     if (this.state.loading === true) {
       return <Loading />;
     }
 
-    const { city, forcastArr } = this.state;
+    const { city, forecastArr } = this.state;
 
     return (
-      <div className='forcast-container'>
-        <h1 className='forcast__h1'>{city}</h1>
-        <div className='forcast__grid'>
-          {
-            forcastArr.map(forcast => {
-              return (
-                <Link
-                  className='forcast__grid__link'
-                  key={forcast.dt}
-                  to={{
-                    pathname: `/detail/${city}`,
-                    state: { forcast }
-                  }}>
-                    <DayItem
-                      forcast={forcast}
-                    />
-                </Link>
-              );
-            })
-          }
+      <div className='forecast-container'>
+        <h1 className='forecast__h1'>{city}</h1>
+        <div className='forecast__grid'>
+          {forecastArr.map(forecast => {
+            return (
+              <Link
+                className='forecast__grid__link'
+                key={forecast.dt}
+                to={{
+                  pathname: `/detail/${city}`,
+                  state: { forecast }
+                }}>
+                  <DayItem forecast={forecast} />
+              </Link>
+            );
+          })}
         </div>
       </div>
     );

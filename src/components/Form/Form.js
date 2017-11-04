@@ -1,22 +1,12 @@
 import React, { Component } from 'react';
 import Autocomplete from 'react-google-autocomplete';
 import { Link } from 'react-router-dom';
-import { shape, string, bool, object } from 'prop-types';
+import { string } from 'prop-types';
 import './Form.css';
 
 class Form extends Component {
   static propTypes = {
-    flexDirection: string.isRequired,
-    match: shape({
-      isExact: bool,
-      params: object,
-      path: string,
-      url: string
-    })
-  }
-
-  static defaultProps = {
-    match: {}
+    flexDirection: string.isRequired
   }
 
   state = {

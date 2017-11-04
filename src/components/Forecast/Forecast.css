@@ -1,18 +1,42 @@
-.forcast__h1 {
-  color: #808080;;
+.forecast__h1,
+.forecast__error h2 {
+  color: #808080;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen-Sans, Ubuntu, Cantarell, Helvetica Neue, sans-serif;
-  font-size: 4rem;
   font-weight: 100;
+}
+
+.forecast__error {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 85%;
+}
+
+.forecast__error h2 {
+  font-size: 2rem;
+  margin: 0;
+}
+
+.forecast__error__link {
+  font-weight: 400;
+}
+.forecast__error__link:visited {
+  color: #808080;
+}
+
+.forecast__h1 {
+  font-size: 4rem;
   margin: 0 0 0.2em;
 }
 
-.forcast__grid {
+.forecast__grid {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
-.forcast__grid__link {
+.forecast__grid__link {
   align-items: space-between;
   display: flex;
   justify-content: center;

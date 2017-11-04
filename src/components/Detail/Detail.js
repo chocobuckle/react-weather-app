@@ -3,19 +3,18 @@ import './Detail.css';
 import DayItem from '../DayItem/DayItem';
 
 function Detail({ location, match }) {
-  const { forcast } = location.state;
+  const { forecast } = location.state;
   const city = match.params.city;
-  const convertCase = str => str.split(' ').map(word => word[0].toUpperCase() + word.slice(1)).join(' ');
-  const description = convertCase(forcast.weather[0].description);
-  const minTemp = convertCase(forcast.temp.min.toString());
-  const maxTemp = convertCase(forcast.temp.max.toString());
-  const humidity = convertCase(forcast.humidity.toString());
-  console.log(forcast);
+  const convertCase = str => str.split(' ')
+    .map(word => word[0].toUpperCase() + word.slice(1))
+    .join(' ');
+  const description = convertCase(forecast.weather[0].description);
+  const minTemp = convertCase(forecast.temp.min.toString());
+  const maxTemp = convertCase(forecast.temp.max.toString());
+  const humidity = convertCase(forecast.humidity.toString());
   return (
     <div className='detail-container'>
-      <DayItem
-        forcast={forcast}
-      />
+      <DayItem forecast={forecast} />
       <h1>{city}</h1>
       <h1>{description}</h1>
       <h1>Min Temp: {minTemp}</h1>

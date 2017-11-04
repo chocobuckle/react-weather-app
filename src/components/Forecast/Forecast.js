@@ -20,7 +20,17 @@ class Forecast extends Component {
   }
 
   componentDidMount() {
-    const { city } = queryString.parse(this.props.location.search);
+    this.getWeatherData(this.props.location.search);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    const currentQueryString = this.props.location.search;
+    const nextQueryString = nextProps.location.search;
+    if (currentQueryString !== nextQueryString) this.getWeatherData(nextQueryString);
+  }
+
+  getWeatherData(str) {
+    const { city } = queryString.parse(str);
     const sevenDayForecastURL = `https://api.openweathermap.org/data/2.5/forecast/daily?q=${city}&type=accurate&units=metric&APPID=b714ec74bbab5650795063cb0fdf5fbe&cnt=7`;
     axios.get(sevenDayForecastURL)
       .then(response => {
@@ -40,6 +50,7 @@ class Forecast extends Component {
         });
       });
   }
+
 
   render() {
     if (this.state.error === true) {

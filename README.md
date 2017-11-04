@@ -2,9 +2,9 @@
 
 ## [LIVE DEMO](https://weather-app-204c5.firebaseapp.com/)
 
-![Screenshot of the application.](./weather01.jpg?raw=true "Weather App")
-
 A single-page application demonstrating my knowledge of React, React Router 4, ES6/7, making AJAX requests with Axios, the Open Weather API, Google Places API, and SVG images.
+
+![Screenshot of the application.](./weather01.jpg?raw=true "Weather App")
 
 ![Screenshot of the application.](./weather02.jpg?raw=true "Weather App")
 
@@ -12,4 +12,4 @@ A single-page application demonstrating my knowledge of React, React Router 4, E
 
 ## Getting Started
 
-Just download the repository, unzip, then navigate to the 'public' folder and click on 'index.html' to open the page in your default browser, or if you're feeling lazy then just click [here](https://weather-app-204c5.firebaseapp.com/) to view the live version via Firebase.
+Just download the repository, unzip, run 'yarn install' followed by 'yarn build', then navigate to the 'build' folder and click on 'index.html' to open the page in your default browser, or if you're feeling lazy just click [here](https://weather-app-204c5.firebaseapp.com/) to view the live version via Firebase.

@@ -33,7 +33,7 @@
   }
 }
 
-@media screen and (min-width: 48em) {
+@media screen and (min-width: 45.875em) {
   .form__input,
   .form__button {
     font-size: 1.4rem;

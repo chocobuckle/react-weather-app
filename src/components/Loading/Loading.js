@@ -8,7 +8,7 @@ const styles = {
   }
 };
 
-export default class Loading extends Component {
+class Loading extends Component {
   static propTypes = {
     text: string.isRequired,
     speed: number.isRequired
@@ -55,3 +55,5 @@ export default class Loading extends Component {
     );
   }
 }
+
+export default Loading;

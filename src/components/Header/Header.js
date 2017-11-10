@@ -1,27 +1,24 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { shape, string, bool, object } from 'prop-types';
 import Form from '../Form/Form';
 import './Header.css';
 
-Header.propTypes = {
-  match: shape({
-    isExact: bool,
-    params: object,
-    path: string,
-    url: string
-  }).isRequired
-};
-
-Header.defaultProps = {
-  match: {}
+const formStyles = {
+  container: {
+    justifyContent: 'space-around',
+    margin: '0.4em'
+  },
+  input: {},
+  button: {
+    marginLeft: '0.65em'
+  }
 };
 
 function Header(props) {
   return (
     <div className='header-container'>
       <Link to='/' className='header__h1'>Weather App</Link>
-      <Form flexDirection='row' {...props} />
+      <Form formStyles={formStyles} {...props} />
     </div>
   );
 }

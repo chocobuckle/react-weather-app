@@ -3,8 +3,9 @@
   background-image: url('../../pattern.svg');
   display: flex;
   flex-direction: column;
-  height: 92%;
   justify-content: center;
+/*  height: 85%;*/
+  flex-grow: 1;
   width: 100%;
 }
 

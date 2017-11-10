@@ -14,6 +14,8 @@
 	},
 	"globals": {},
 	"rules": {
+		"arrow-parens": ["error", "as-needed"],
+		"jsx-a11y/anchor-is-valid": "off",
 		"arrow-body-style": "off",
 		"array-bracket-spacing": "off",
 		"comma-dangle": ["error", "never"],
@@ -24,6 +26,8 @@
 		"no-alert": "off",
 		"no-console": "off",
 		"react/jsx-filename-extension": "off",
+		"react/forbid-prop-types": "off",
+		"react/require-default-props": "off",
 		"no-extend-native": "off",
 		"no-param-reassign": ["error", { "props": false }],
 		"no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],

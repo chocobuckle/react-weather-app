@@ -23,10 +23,10 @@ class Forecast extends Component {
     this.getWeatherData(this.props.location.search);
   }
 
-  componentWillReceiveProps(nextProps) {
-    const currentQueryString = this.props.location.search;
-    const nextQueryString = nextProps.location.search;
-    if (currentQueryString !== nextQueryString) this.getWeatherData(nextQueryString);
+  componentDidUpdate(prevProps) {
+    const prevQueryString = prevProps.location.search;
+    const newQueryString = this.props.location.search;
+    if (newQueryString !== prevQueryString) this.getWeatherData(newQueryString);
   }
 
   getWeatherData(str) {
@@ -46,7 +46,7 @@ class Forecast extends Component {
         console.warn(error);
         this.setState({
           error: true,
-          loading: false,
+          loading: false
         });
       });
   }
@@ -59,7 +59,7 @@ class Forecast extends Component {
           <h2>No data available for that city.</h2>
           <h2>Please <Link to='/' className='forecast__error__link'>choose another city.</Link></h2>
         </div>
-      )
+      );
     }
 
     if (this.state.loading === true) {
@@ -81,7 +81,7 @@ class Forecast extends Component {
                   pathname: `/detail/${city}`,
                   state: { forecast }
                 }}>
-                  <DayItem forecast={forecast} />
+                <DayItem forecast={forecast} />
               </Link>
             );
           })}

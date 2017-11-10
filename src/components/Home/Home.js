@@ -4,12 +4,14 @@ import './Home.css';
 
 const formStyles = {
   container: {
+    flexDirection: 'column',
+    alignItems: 'center'
   },
   input: {
-
+    margin: '0.4em auto'
   },
   button: {
-
+    width: '7em'
   }
 };
 

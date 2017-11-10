@@ -3,16 +3,26 @@
   background-image: url('../../pattern.svg');
   display: flex;
   flex-direction: column;
-  justify-content: center;
-/*  height: 85%;*/
   flex-grow: 1;
+  justify-content: center;
   width: 100%;
 }
 
 .home__h1 {
   color: #fff;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen-Sans, Ubuntu, Cantarell, Helvetica Neue, sans-serif;
-  font-size: 3rem;
+  font-size: 09vw;
   font-weight: 100;
-  margin-bottom: 0.25em;
+}
+
+@media screen and (min-width: 37.5em) {
+  .home__h1 {
+    font-size: 8vw;
+  }
+}
+
+@media screen and (min-width: 45.875em) {
+  .home__h1 {
+    font-size: 3rem;
+  }
 }

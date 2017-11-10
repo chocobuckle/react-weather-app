@@ -4,7 +4,7 @@
 
 .form__input,
 .form__button {
-  font-size: 4vw;
+  font-size: 4.45vw;
 }
 
 .form__button {
@@ -36,6 +36,6 @@
 @media screen and (min-width: 45.875em) {
   .form__input,
   .form__button {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
   }
 }

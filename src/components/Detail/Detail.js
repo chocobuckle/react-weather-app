@@ -20,8 +20,8 @@ function Detail({ location, match }) {
   const { humidity } = forecast;
   return (
     <div className='detail-container'>
-      <DayItem forecast={forecast} />
-      <h1>{city}</h1>
+      <DayItem detailScreen forecast={forecast} />
+      <h1 style={{ fontWeight: '400' }}>{city}</h1>
       <h1>{description}</h1>
       <h1>Min Temp: {min} °C</h1>
       <h1>Max Temp: {max} °C</h1>

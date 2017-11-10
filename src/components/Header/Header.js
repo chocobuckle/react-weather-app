@@ -10,15 +10,17 @@ const formStyles = {
   },
   input: {},
   button: {
-    marginLeft: '0.65em'
+    marginLeft: '0.725em'
   }
 };
 
 function Header(props) {
   return (
-    <div className='header-container'>
-      <Link to='/' className='header__h1'>Weather App</Link>
-      <Form formStyles={formStyles} {...props} />
+    <div className='header-container' style={{ width: '100%' }}>
+      <header>
+        <Link to='/' className='header__h1'>Weather App</Link>
+        <Form formStyles={formStyles} {...props} />
+      </header>
     </div>
   );
 }

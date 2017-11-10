@@ -2,13 +2,32 @@
   align-items: center;
   display: flex;
   flex-direction: column;
-  padding-top: 2em;
+  padding-top: 1.5em;
+  text-align: center;
 }
 
 h1 {
   color: #808080;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen-Sans, Ubuntu, Cantarell, Helvetica Neue, sans-serif;
-  font-size: 2.5rem;
+  font-size: 7vw;
   font-weight: 100;
   margin: 0;
+}
+
+@media screen and (min-width: 31.875em) {
+  h1 {
+    font-size: 6vw;
+  }
+}
+
+@media screen and (min-width: 37.5em) {
+  h1 {
+    font-size: 5vw;
+  }
+}
+
+@media screen and (min-width: 45.875em) {
+  h1 {
+    font-size: 2.5rem;
+  }
 }

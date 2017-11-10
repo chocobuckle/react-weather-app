@@ -1,17 +1,11 @@
 import React, { Component } from 'react';
-import { string, number } from 'prop-types';
-
-const styles = {
-  content: {
-    textAlign: 'center',
-    fontSize: '35px'
-  }
-};
+import PropTypes from 'prop-types';
+import './Loading.css';
 
 class Loading extends Component {
   static propTypes = {
-    text: string.isRequired,
-    speed: number.isRequired
+    text: PropTypes.string,
+    speed: PropTypes.number
   }
 
   static defaultProps = {
@@ -34,7 +28,7 @@ class Loading extends Component {
           };
         });
       } else {
-        this.setState((prevState) => {
+        this.setState(prevState => {
           return {
             text: `${prevState.text}.`
           };
@@ -49,9 +43,9 @@ class Loading extends Component {
 
   render() {
     return (
-      <p style={styles.content}>
-        {this.state.text}
-      </p>
+      <div className='loading-container'>
+        <h1 className='loading__h1'>{this.state.text}</h1>
+      </div>
     );
   }
 }

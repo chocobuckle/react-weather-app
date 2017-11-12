@@ -8,7 +8,7 @@ const formStyles = {
     alignItems: 'center'
   },
   input: {
-    margin: '0.4em auto'
+    margin: '0.4em auto 0.5em'
   },
   button: {
     width: '7em'

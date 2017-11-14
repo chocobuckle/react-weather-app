@@ -10,12 +10,12 @@ ReactDOM.render(<App />, rootEl);
 
 if (module.hot) {
   module.hot.accept('./App', () => {
-    const NextApp = require('./App').default
+    const NextApp = require('./App').default; // eslint-disable-line global-require
     ReactDOM.render(
       <NextApp />,
       rootEl
-    )
-  })
+    );
+  });
 }
 
 registerServiceWorker();

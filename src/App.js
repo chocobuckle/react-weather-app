@@ -1,11 +1,23 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import styled from 'styled-components';
-import './App.css';
-import Home from './components/Home/Home';
-import Header from './components/Header/Header';
-import Forecast from './components/Forecast/Forecast';
-import Detail from './components/Detail/Detail';
+import styled, { injectGlobal } from 'styled-components';
+import Home from './components/Home';
+import Header from './components/Header';
+import Forecast from './components/Forecast';
+import Detail from './components/Detail';
+
+// eslint-disable-next-line no-unused-expressions
+injectGlobal`
+  html {
+    box-sizing: border-box;
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: inherit;
+  }
+`;
 
 const Wrapper = styled.div`
   display: flex;

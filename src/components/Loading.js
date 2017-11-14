@@ -1,6 +1,31 @@
 import React, { Component } from 'react';
+import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import './Loading.css';
+
+const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: center;
+`;
+
+const Header = styled.h1`
+  bottom: 6.5vh;
+  color: #808080;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen-Sans, Ubuntu, Cantarell, Helvetica Neue, sans-serif;
+  font-size: 9vw;
+  font-weight: 100;
+  position: relative;
+  text-align: center;
+
+  @media (min-width: 37.5em) {
+    font-size: 8vw;
+  }
+
+  @media (min-width: 46.563em) {
+    font-size: 3rem;
+  }
+`;
 
 class Loading extends Component {
   static propTypes = {
@@ -43,9 +68,9 @@ class Loading extends Component {
 
   render() {
     return (
-      <div className='loading-container'>
-        <h1 className='loading__h1'>{this.state.text}</h1>
-      </div>
+      <Wrapper>
+        <Header>{this.state.text}</Header>
+      </Wrapper>
     );
   }
 }

@@ -1,5 +1,0 @@
-/* Hides Google logo in the autocomplete drop-down. */
-.pac-logo::after {
-  display: none;
-}
-

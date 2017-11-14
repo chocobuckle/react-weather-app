@@ -1,8 +1,15 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
+import styled, { injectGlobal } from 'styled-components';
 import Autocomplete from 'react-google-autocomplete';
-import './Form.css';
+
+// eslint-disable-next-line no-unused-expressions
+injectGlobal`
+  // Hides Google logo in the autocomplete drop-down.
+  .pac-logo::after {
+    display: none;
+  }
+`;
 
 const Wrapper = styled.form`
   display: flex;
@@ -22,7 +29,7 @@ function fontSizeAndMediaQueries() {
       font-size: 3vw;
     }
 
-    @media (min-width: 45.875em) {
+    @media (min-width: 46.563em) {
       font-size: 1.3rem;
     }
   `;

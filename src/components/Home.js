@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import Form from '../Form/Form';
-import patternImg from '../../pattern.svg';
+import Form from './Form';
+import patternImg from '../pattern.svg';
 
-const Wrapper = styled.div`
+const Wrapper = styled.section`
   align-items: center;
   background-image: url(${patternImg});
   display: flex;
@@ -18,12 +18,13 @@ const EnterACity = styled.h1`
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen-Sans, Ubuntu, Cantarell, Helvetica Neue, sans-serif;
   font-size: 09vw;
   font-weight: 100;
+  margin: 0;
 
   @media (min-width: 37.5em) {
     font-size: 8vw;
   }
 
-  @media (min-width: 45.875em) {
+  @media (min-width: 46.563em) {
     font-size: 3rem;
   }
 `;

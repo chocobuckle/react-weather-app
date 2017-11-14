@@ -2,7 +2,7 @@
 
 ## [LIVE DEMO](https://weather-app-204c5.firebaseapp.com/)
 
-A single-page application demonstrating my knowledge of React, React Router 4, ES6/7, making AJAX requests with Axios, the Open Weather API, Google Places API, and SVG images.
+A single-page application demonstrating my knowledge of React, Styled Components, React Router 4, ES6/7, making AJAX requests with Axios, the Open Weather API, Google Places API, and SVG images.
 
 ![Screenshot of the application.](./weather01.jpg?raw=true "Weather App")
 

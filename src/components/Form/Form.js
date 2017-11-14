@@ -1,19 +1,58 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 import Autocomplete from 'react-google-autocomplete';
 import './Form.css';
 
+const Wrapper = styled.form`
+  display: flex;
+  ${props => props.parentIsHomeComponent && 'flex-direction: column; align-items: center;'}
+  ${props => props.parentIsHeaderComponent && 'justify-content: space-around; margin: 0.4em;'}
+`;
+
+function fontSizeAndMediaQueries() {
+  return `
+    font-size: 4.45vw;
+
+    @media (min-width: 31.875em) {
+      font-size: 3.5vw;
+    }
+
+    @media (min-width: 37.5em) {
+      font-size: 3vw;
+    }
+
+    @media (min-width: 45.875em) {
+      font-size: 1.3rem;
+    }
+  `;
+}
+
+const Input = styled(Autocomplete)`
+  ${props => props['data-parentIsHomeComponent'] && 'margin: 0.4em auto 0.5em;'}
+  ${fontSizeAndMediaQueries()}
+`;
+
+const Button = styled.button`
+  background-color: #5cb85c;
+  color: white;
+  cursor: pointer;
+  text-decoration: none;
+  ${props => props.parentIsHomeComponent && 'width: 7em;'}
+  ${props => props.parentIsHeaderComponent && 'margin-left: 0.725em;'}
+  ${fontSizeAndMediaQueries()}
+`;
+
 class Form extends Component {
   static propTypes = {
-    formStyles: PropTypes.object,
+    parentIsHomeComponent: PropTypes.bool,
     match: PropTypes.object,
     history: PropTypes.object,
     push: PropTypes.object
   }
 
   state = {
-    cityName: '',
-    formStyles: this.props.formStyles
+    cityName: ''
   }
 
   handleOnChange = e => {
@@ -41,27 +80,19 @@ class Form extends Component {
   }
 
   render() {
-    const { cityName, formStyles } = this.state;
+    const { cityName } = this.state;
     return (
-      <form
-        className='form'
-        onSubmit={this.handleSubmit}
-        style={formStyles.container}>
-        <Autocomplete
-          className='form__input'
+      <Wrapper onSubmit={this.handleSubmit} {...this.props}>
+        <Input
           onChange={e => this.handleOnChange(e)}
           onPlaceSelected={e => this.handleOnChange(e)}
           placeholder='Dublin, Ireland'
-          style={formStyles.input}
           types={['(regions)']}
           value={cityName}
+          data-parentIsHomeComponent={this.props.parentIsHomeComponent}
         />
-        <button
-          className='form__button'
-          style={formStyles.button}
-          type='submit'>Get Weather
-        </button>
-      </form>
+        <Button type='submit' {...this.props}>Get Weather</Button>
+      </Wrapper>
     );
   }
 }

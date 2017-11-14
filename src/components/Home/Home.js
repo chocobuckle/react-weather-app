@@ -1,26 +1,39 @@
 import React from 'react';
+import styled from 'styled-components';
 import Form from '../Form/Form';
-import './Home.css';
+import patternImg from '../../pattern.svg';
 
-const formStyles = {
-  container: {
-    flexDirection: 'column',
-    alignItems: 'center'
-  },
-  input: {
-    margin: '0.4em auto 0.5em'
-  },
-  button: {
-    width: '7em'
+const Wrapper = styled.div`
+  align-items: center;
+  background-image: url(${patternImg});
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: center;
+  width: 100%;
+`;
+
+const EnterACity = styled.h1`
+  color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen-Sans, Ubuntu, Cantarell, Helvetica Neue, sans-serif;
+  font-size: 09vw;
+  font-weight: 100;
+
+  @media (min-width: 37.5em) {
+    font-size: 8vw;
   }
-};
+
+  @media (min-width: 45.875em) {
+    font-size: 3rem;
+  }
+`;
 
 function Home(props) {
   return (
-    <div className='home-container'>
-      <h1 className='home__h1'>Enter a City</h1>
-      <Form formStyles={formStyles} {...props} />
-    </div>
+    <Wrapper>
+      <EnterACity>Enter a City</EnterACity>
+      <Form parentIsHomeComponent {...props} />
+    </Wrapper>
   );
 }
 

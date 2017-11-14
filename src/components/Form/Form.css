@@ -1,41 +1,5 @@
-.form {
-  display: flex;
-}
-
-.form__input,
-.form__button {
-  font-size: 4.45vw;
-}
-
-.form__button {
-  background-color: #5cb85c;
-  color: white;
-  cursor: pointer;
-  text-decoration: none;
-}
-
 /* Hides Google logo in the autocomplete drop-down. */
 .pac-logo::after {
   display: none;
 }
 
-@media screen and (min-width: 31.875em) {
-  .form__input,
-  .form__button {
-    font-size: 3.5vw;
-  }
-}
-
-@media screen and (min-width: 37.5em) {
-  .form__input,
-  .form__button {
-    font-size: 3vw;
-  }
-}
-
-@media screen and (min-width: 45.875em) {
-  .form__input,
-  .form__button {
-    font-size: 1.3rem;
-  }
-}

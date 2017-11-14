@@ -14,6 +14,7 @@
 	},
 	"globals": {},
 	"rules": {
+		"no-confusing-arrow": "off",
 		"arrow-parens": ["error", "as-needed"],
 		"jsx-a11y/anchor-is-valid": "off",
 		"arrow-body-style": "off",

@@ -27,7 +27,7 @@ const Icon = styled.img`
 `;
 
 const ForecastScreenDate = styled.h2`
-  ${dateFont}
+  ${dateFont()}
   font-size: 6.5vw;
 
   @media (min-width: 31.875em) {
@@ -39,12 +39,12 @@ const ForecastScreenDate = styled.h2`
   }
 
   @media (min-width: 46.563em) {
-      font-size: 2rem;
+    font-size: 2rem;
   }
 `;
 
 const DetailScreenDate = styled.h2`
-  ${dateFont}
+  ${dateFont()}
   font-size: 9vw;
 
   @media (min-width: 31.875em) {

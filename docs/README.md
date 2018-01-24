@@ -12,4 +12,4 @@ A single-page application demonstrating my knowledge of React, Styled Components
 
 ## Getting Started
 
-Just download the repository, unzip, run 'yarn install' followed by 'yarn build', then navigate to the 'build' folder and click on 'index.html' to open the page in your default browser, or if you're feeling lazy just click [here](https://weather-app.conordoyle.io) to view the live version via Firebase.
+Just [download](https://github.com/chocobuckle/react-weather-app/archive/master.zip) the repository, unzip, run 'yarn install' followed by 'yarn build', then navigate to the 'build' folder and click on 'index.html' to open the page in your default browser, or if you're feeling lazy just click [here](https://weather-app.conordoyle.io) to view the live version via Firebase.
